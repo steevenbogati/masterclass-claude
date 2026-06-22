@@ -79,20 +79,20 @@
 <body class="font-sans antialiased">
 
   <!-- ============================================================
-       HEADER (marca + CTA único, sin links que distraigan)
+       HEADER (indicador de evento + CTA único, sin links que distraigan)
        ============================================================ -->
   <header class="sticky top-0 z-40 border-b border-line/70 bg-cream/85 backdrop-blur-md">
     <div class="mx-auto flex max-w-6xl items-center justify-between px-5 py-3.5">
       <div class="flex items-center gap-2.5">
-        <span class="flex h-8 w-8 items-center justify-center rounded-lg bg-ink text-sm font-bold text-cream">B</span>
-        <span class="font-serif text-lg font-semibold tracking-tight text-ink">BOGATI</span>
+        <span class="flex h-2 w-2 items-center justify-center rounded-full bg-coral">
+          <span class="h-2 w-2 animate-ping rounded-full bg-coral"></span>
+        </span>
+        <span class="text-sm font-semibold text-ink">En vivo</span>
+        <span class="hidden text-sm text-ink-soft sm:inline">· Mié 1 jul · 7PM (Ecuador)</span>
       </div>
-      <div class="flex items-center gap-4">
-        <span class="hidden text-sm text-ink-soft sm:inline">Mié 1 jul · 7PM (Ecuador)</span>
-        <a href="#registro" class="rounded-lg bg-coral px-4 py-2 text-sm font-semibold text-white shadow-soft transition hover:bg-coral-dark">
-          Reservar lugar
-        </a>
-      </div>
+      <a href="#registro" class="rounded-lg bg-coral px-4 py-2 text-sm font-semibold text-white shadow-soft transition hover:bg-coral-dark">
+        Reservar lugar
+      </a>
     </div>
   </header>
 
@@ -355,14 +355,14 @@
       <div class="reveal flex flex-col items-center gap-8 overflow-hidden rounded-3xl border border-line bg-white p-8 shadow-soft sm:flex-row sm:items-stretch sm:gap-10 sm:p-0">
         <img
           src="santiago.jpg"
-          alt="Santiago Castro, CEO de BOGATI e instructor de la masterclass"
+          alt="Santiago Castro, instructor de la masterclass"
           class="h-64 w-52 shrink-0 rounded-2xl object-cover object-top ring-1 ring-line sm:h-auto sm:w-56 sm:rounded-none sm:rounded-l-3xl sm:ring-0 lg:w-64"
           loading="lazy"
         />
         <div class="text-center sm:flex sm:flex-col sm:justify-center sm:py-10 sm:pr-10 sm:text-left">
           <span class="eyebrow justify-center text-coral-dark sm:justify-start">Tu instructor</span>
           <h2 class="mt-3 font-serif text-3xl font-semibold text-ink">Santiago Castro</h2>
-          <p class="mt-1 font-semibold text-ink">CEO de BOGATI</p>
+          <p class="mt-1 font-semibold text-ink">Fundador &amp; CEO</p>
           <p class="mt-4 leading-relaxed text-ink-soft">
             <!-- TODO: completa 2-3 líneas de credibilidad (años, empresas, resultados con IA). -->
             Lleva la IA del discurso a la práctica dentro de empresas reales. En esta sesión te
@@ -458,8 +458,7 @@
   <footer class="border-t border-line px-5 py-10 pb-28 text-sm text-ink-soft md:pb-10">
     <div class="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 sm:flex-row">
       <div class="flex items-center gap-2.5">
-        <span class="flex h-7 w-7 items-center justify-center rounded-md bg-ink text-xs font-bold text-cream">B</span>
-        <span class="font-serif font-semibold text-ink">BOGATI</span>
+        <span class="font-serif font-semibold text-ink">Claude para Fundadores y Dueños de Negocio</span>
         <span class="text-ink-soft">· <span id="year"></span></span>
       </div>
       <div class="flex gap-5">
