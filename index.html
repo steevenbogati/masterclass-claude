@@ -122,9 +122,10 @@
         </p>
 
         <div class="mt-8 flex flex-col items-center gap-4 sm:flex-row lg:items-start">
-          <a href="#registro" class="w-full rounded-xl bg-coral px-8 py-4 text-center text-lg font-semibold text-white shadow-lift transition hover:-translate-y-0.5 hover:bg-coral-dark sm:w-auto">
+          <!-- Primer botón: abre el formulario en popup (modal) -->
+          <button type="button" data-open-form class="w-full rounded-xl bg-coral px-8 py-4 text-center text-lg font-semibold text-white shadow-lift transition hover:-translate-y-0.5 hover:bg-coral-dark sm:w-auto">
             Reservar mi lugar gratis →
-          </a>
+          </button>
         </div>
         <p class="mt-4 text-sm text-ink-soft">
           Para fundadores, CEOs y equipos directivos · Sin conocimientos técnicos
@@ -504,6 +505,43 @@
     <p class="mx-auto mt-6 max-w-6xl text-xs text-ink-soft/70">Este evento no está afiliado ni patrocinado por Anthropic. “Claude” es marca de su respectivo propietario.</p>
   </footer>
 
+  <!-- ============================================================
+       MODAL / POPUP del formulario (lo abre el primer botón del hero)
+       ============================================================ -->
+  <div id="formModal" class="fixed inset-0 z-[60] hidden items-center justify-center p-4">
+    <!-- Fondo oscurecido -->
+    <div data-close-form class="absolute inset-0 bg-ink/60 backdrop-blur-sm"></div>
+    <!-- Tarjeta -->
+    <div class="relative w-full max-w-md overflow-hidden rounded-2xl bg-white shadow-lift">
+      <div class="flex items-center justify-between border-b border-line px-5 py-4">
+        <h3 class="font-serif text-lg font-semibold text-ink">Reserva tu lugar gratis</h3>
+        <button type="button" data-close-form aria-label="Cerrar" class="flex h-8 w-8 items-center justify-center rounded-full text-ink-soft transition hover:bg-cream hover:text-ink">
+          <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
+        </button>
+      </div>
+      <div class="p-4">
+        <!-- Mismo formulario de LeadConnector, en versión modal -->
+        <iframe
+          src="https://api.leadconnectorhq.com/widget/form/5TY98u37wkKklcEpTJ8n"
+          style="width:100%;min-height:434px;border:none;border-radius:8px;background:transparent"
+          id="inline-5TY98u37wkKklcEpTJ8n-modal"
+          data-layout="{'id':'INLINE'}"
+          data-trigger-type="alwaysShow"
+          data-trigger-value=""
+          data-activation-type="alwaysActivated"
+          data-activation-value=""
+          data-deactivation-type="neverDeactivate"
+          data-deactivation-value=""
+          data-form-name="Formulario de Claude"
+          data-height="434"
+          data-layout-iframe-id="inline-5TY98u37wkKklcEpTJ8n-modal"
+          data-form-id="5TY98u37wkKklcEpTJ8n"
+          title="Formulario de Claude">
+        </iframe>
+      </div>
+    </div>
+  </div>
+
   <!-- CTA pegajoso en móvil -->
   <a id="stickyCta" href="#registro"
      class="fixed inset-x-3 bottom-3 z-50 translate-y-24 rounded-xl bg-coral px-6 py-4 text-center text-base font-semibold text-white shadow-lift transition-transform duration-300 hover:bg-coral-dark md:hidden">
@@ -543,6 +581,28 @@
     }, { threshold: 0 }).observe(heroForm);
 
     document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Popup del formulario (lo abre el primer botón del hero)
+    const formModal = document.getElementById("formModal");
+    function openFormModal() {
+      formModal.classList.remove("hidden");
+      formModal.classList.add("flex");
+      document.body.style.overflow = "hidden"; // bloquea el scroll de fondo
+    }
+    function closeFormModal() {
+      formModal.classList.add("hidden");
+      formModal.classList.remove("flex");
+      document.body.style.overflow = "";
+    }
+    document.querySelectorAll("[data-open-form]").forEach((el) =>
+      el.addEventListener("click", openFormModal)
+    );
+    document.querySelectorAll("[data-close-form]").forEach((el) =>
+      el.addEventListener("click", closeFormModal)
+    );
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && !formModal.classList.contains("hidden")) closeFormModal();
+    });
   </script>
 </body>
 </html>
