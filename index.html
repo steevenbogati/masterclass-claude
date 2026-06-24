@@ -139,7 +139,24 @@
             <h2 class="font-serif text-xl font-semibold text-ink">Reserva tu lugar</h2>
             <span class="rounded-full bg-coral/10 px-3 py-1 text-xs font-bold uppercase tracking-wide text-coral-dark">Gratis</span>
           </div>
-          <div data-form-slot></div>
+          <!-- Formulario LeadConnector (hero) -->
+          <iframe
+            src="https://api.leadconnectorhq.com/widget/form/5TY98u37wkKklcEpTJ8n"
+            style="width:100%;min-height:451px;border:none;border-radius:8px;background:transparent"
+            id="inline-5TY98u37wkKklcEpTJ8n-hero"
+            data-layout="{'id':'INLINE'}"
+            data-trigger-type="alwaysShow"
+            data-trigger-value=""
+            data-activation-type="alwaysActivated"
+            data-activation-value=""
+            data-deactivation-type="neverDeactivate"
+            data-deactivation-value=""
+            data-form-name="Formulario de Claude"
+            data-height="451"
+            data-layout-iframe-id="inline-5TY98u37wkKklcEpTJ8n-hero"
+            data-form-id="5TY98u37wkKklcEpTJ8n"
+            title="Formulario de Claude">
+          </iframe>
         </div>
 
         <!-- Mock ejecutivo (transformación Excel → presentación) -->
@@ -397,7 +414,24 @@
         <p class="text-sm text-ink-soft">En vivo por Zoom y YouTube · 90 minutos</p>
       </div>
       <div class="mt-8 rounded-3xl bg-white p-6 shadow-lift ring-1 ring-line sm:p-8">
-        <div data-form-slot></div>
+        <!-- Formulario LeadConnector (sección de registro) -->
+        <iframe
+          src="https://api.leadconnectorhq.com/widget/form/5TY98u37wkKklcEpTJ8n"
+          style="width:100%;min-height:451px;border:none;border-radius:8px;background:transparent"
+          id="inline-5TY98u37wkKklcEpTJ8n-reg"
+          data-layout="{'id':'INLINE'}"
+          data-trigger-type="alwaysShow"
+          data-trigger-value=""
+          data-activation-type="alwaysActivated"
+          data-activation-value=""
+          data-deactivation-type="neverDeactivate"
+          data-deactivation-value=""
+          data-form-name="Formulario de Claude"
+          data-height="451"
+          data-layout-iframe-id="inline-5TY98u37wkKklcEpTJ8n-reg"
+          data-form-id="5TY98u37wkKklcEpTJ8n"
+          title="Formulario de Claude">
+        </iframe>
       </div>
     </div>
   </section>
@@ -476,130 +510,13 @@
     Reservar mi lugar gratis →
   </a>
 
-  <!-- ============================================================
-       PLANTILLA DEL FORMULARIO (se clona en cada [data-form-slot])
-       ============================================================ -->
-  <template id="formTemplate">
-    <form novalidate class="lead-form space-y-3">
-      <div>
-        <label class="mb-1 block text-sm font-medium text-ink">Nombre</label>
-        <input name="name" type="text" autocomplete="name" placeholder="Tu nombre"
-               class="w-full rounded-xl border border-line bg-cream-light px-4 py-3.5 text-base text-ink placeholder:text-ink-soft/70 outline-none transition focus:border-coral focus:ring-2 focus:ring-coral/30" />
-        <p class="err mt-1 hidden text-sm text-coral-dark"></p>
-      </div>
-      <div>
-        <label class="mb-1 block text-sm font-medium text-ink">Correo</label>
-        <input name="email" type="email" autocomplete="email" inputmode="email" placeholder="tu@empresa.com"
-               class="w-full rounded-xl border border-line bg-cream-light px-4 py-3.5 text-base text-ink placeholder:text-ink-soft/70 outline-none transition focus:border-coral focus:ring-2 focus:ring-coral/30" />
-        <p class="err mt-1 hidden text-sm text-coral-dark"></p>
-      </div>
-      <div>
-        <label class="mb-1 block text-sm font-medium text-ink">WhatsApp</label>
-        <input name="whatsapp" type="tel" autocomplete="tel" inputmode="tel" placeholder="+593 ..."
-               class="w-full rounded-xl border border-line bg-cream-light px-4 py-3.5 text-base text-ink placeholder:text-ink-soft/70 outline-none transition focus:border-coral focus:ring-2 focus:ring-coral/30" />
-        <p class="err mt-1 hidden text-sm text-coral-dark"></p>
-        <p class="mt-1.5 text-xs text-ink-soft">Solo para enviarte el recordatorio del evento. Nada de spam.</p>
-      </div>
-      <button type="submit"
-              class="submit-btn w-full rounded-xl bg-coral px-6 py-4 text-lg font-semibold text-white shadow-lift transition hover:bg-coral-dark active:scale-[0.99] disabled:cursor-wait disabled:opacity-70">
-        Reservar mi lugar gratis
-      </button>
-      <p class="form-error hidden text-center text-sm text-coral-dark">Hubo un problema al enviar. Inténtalo de nuevo.</p>
-      <p class="flex items-center justify-center gap-1.5 text-center text-xs text-ink-soft">
-        <svg viewBox="0 0 24 24" class="h-3.5 w-3.5" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
-        Tus datos están seguros · 100% gratis
-      </p>
-    </form>
-    <div class="success hidden rounded-2xl bg-white p-8 text-center">
-      <div class="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-coral/10 text-coral">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" class="h-7 w-7"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
-      </div>
-      <h3 class="font-serif text-2xl font-semibold text-ink">¡Registro confirmado!</h3>
-      <p class="mt-2 text-ink-soft">Revisa tu correo y tu WhatsApp para los detalles de acceso. Nos vemos el 1 de julio.</p>
-    </div>
-  </template>
+  <!-- Script de LeadConnector: auto-redimensiona los iframes del formulario -->
+  <script src="https://link.msgsndr.com/js/form_embed.js"></script>
 
   <script>
-    // ==============================================================
-    // CONFIGURACIÓN DEL FORMULARIO
-    // Pega aquí la URL de tu herramienta de email marketing / CRM.
-    // Funciona con cualquiera que reciba un POST: Mailchimp, ActiveCampaign,
-    // Systeme.io, Brevo, ConvertKit, o un Google Apps Script / Google Form.
-    // Si lo dejas vacío, el formulario funciona en modo demo (no envía nada).
-    // ==============================================================
-    const FORM_ENDPOINT = "【PEGAR_AQUÍ_URL_DEL_FORMULARIO】";
-
     // Fecha y hora del evento (ISO 8601 con zona horaria). Ecuador = UTC-5.
     // TODO: ajusta el año si aplica.
     const EVENT_DATE = "2026-07-01T19:00:00-05:00";
-
-    function validate(form) {
-      const data = {
-        name: form.name.value.trim(),
-        email: form.email.value.trim(),
-        whatsapp: form.whatsapp.value.trim(),
-      };
-      const errors = {};
-      if (data.name.length < 2) errors.name = "Escribe tu nombre.";
-      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email)) errors.email = "Escribe un correo válido.";
-      if (!/^[+\d][\d\s()-]{6,18}$/.test(data.whatsapp)) errors.whatsapp = "Escribe un WhatsApp válido (con código de país).";
-      return { data, errors };
-    }
-
-    async function sendLead(data) {
-      // TODO: conectar a CRM/email — POST de los datos al FORM_ENDPOINT.
-      if (!FORM_ENDPOINT || FORM_ENDPOINT.includes("PEGAR_AQUÍ")) {
-        console.warn("FORM_ENDPOINT no configurado. Lead (modo demo):", data);
-        await new Promise((r) => setTimeout(r, 600));
-        return;
-      }
-      const res = await fetch(FORM_ENDPOINT, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
-      });
-      if (!res.ok) throw new Error("HTTP " + res.status);
-    }
-
-    // Clona la plantilla del formulario en cada slot
-    const tpl = document.getElementById("formTemplate");
-    document.querySelectorAll("[data-form-slot]").forEach((slot) => {
-      slot.appendChild(tpl.content.cloneNode(true));
-    });
-
-    document.querySelectorAll(".lead-form").forEach((form) => {
-      form.addEventListener("submit", async (e) => {
-        e.preventDefault();
-        const { data, errors } = validate(form);
-
-        form.querySelectorAll(".err").forEach((el) => { el.classList.add("hidden"); el.textContent = ""; });
-        form.querySelector(".form-error").classList.add("hidden");
-
-        if (Object.keys(errors).length) {
-          for (const field in errors) {
-            const input = form.querySelector(`[name="${field}"]`);
-            const errEl = input.parentElement.querySelector(".err");
-            errEl.textContent = errors[field];
-            errEl.classList.remove("hidden");
-          }
-          return;
-        }
-
-        const btn = form.querySelector(".submit-btn");
-        const original = btn.textContent;
-        btn.disabled = true; btn.textContent = "Reservando…";
-
-        try {
-          await sendLead(data);
-          const wrapper = form.parentElement;
-          form.classList.add("hidden");
-          wrapper.querySelector(".success").classList.remove("hidden");
-        } catch (err) {
-          form.querySelector(".form-error").classList.remove("hidden");
-          btn.disabled = false; btn.textContent = original;
-        }
-      });
-    });
 
     // Días restantes para el evento (en la banda de credibilidad)
     (function () {
